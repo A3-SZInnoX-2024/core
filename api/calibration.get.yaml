@@ -1,0 +1,14 @@
+name: Get Calibration Status
+description: Get the status of the calibration
+version: 1.0.0
+path: /calibration
+method: GET
+response:
+  - name: internal
+    description: The internal parameter status of the calibration
+    type: bool
+    example: true
+  - name: external
+    description: The external parameter status of the calibration
+    type: bool
+    example: false

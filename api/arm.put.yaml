@@ -1,0 +1,15 @@
+name: Modify Machine Arm Status
+description: Modify the status of the machine arm
+version: 1.0.0
+path: /arm
+method: PUT
+body:
+  - name: status
+    description: The new status of the machine arm
+    required: true
+    type: string
+    enum:
+      - moving
+      - stopped
+    example: moving
+responses: null

@@ -1,0 +1,35 @@
+name: Get Location
+description: Get the location of the robot
+version: 1.0.0
+path: /location
+method: GET
+response:
+  - name: x
+    description: The x coordinate of the robot
+    type: number
+    example: 0
+  - name: y
+    description: The y coordinate of the robot
+    type: number
+    example: 0
+  - name: z
+    description: The z coordinate of the robot
+    type: number
+    example: 0
+  - name: roll
+    description: The roll of the robot (Euler angles)
+    type: number
+    example: 0
+  - name: pitch
+    description: The pitch of the robot (Euler angles)
+    type: number
+    example: 0
+  - name: yaw
+    description: The yaw of the robot (Euler angles)
+    type: number
+    example: 0
+  - name: since
+    description: The time the robot has been in its current location
+    type: string
+    format: date-time
+    example: 2020-01-01T12:00:00Z

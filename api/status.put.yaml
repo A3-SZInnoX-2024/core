@@ -1,0 +1,23 @@
+name: Modify Robot Status
+description: Modify the status of the robot
+version: 1.0.0
+path: /status
+method: PUT
+body:
+  - name: status
+    description: The new status of the robot
+    required: true
+    type: string
+    enum:
+      - moving
+      - stopped
+    example: moving
+  - name: target
+    description: The target status of the robot
+    required: true
+    type: string
+    enum:
+      - moving
+      - stopped
+    example: moving
+responses: null

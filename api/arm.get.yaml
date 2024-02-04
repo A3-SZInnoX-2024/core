@@ -1,0 +1,18 @@
+name: Get the status of Machine Arm
+description: Get the status of the machine arm
+version: 1.0.0
+path: /arm
+method: GET
+response:
+  - name: status
+    description: The status of the machine arm
+    type: string
+    enum:
+      - moving
+      - stopped
+    example: moving
+  - name: since
+    description: The time the machine arm has been in its current status
+    type: string
+    format: date-time
+    example: 2020-01-01T12:00:00Z
