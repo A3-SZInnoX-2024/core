@@ -1,0 +1,109 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{enumitem}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{}
+
+\begin{document}
+
+\hypertarget{channels}{%
+\section{Channels}\label{channels}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \texttt{location}: send the location. The \texttt{location} channel is
+  the channel transfers the location data from the \texttt{CV} to the
+  core. Then, the core will send the location data to the \texttt{RC}
+  (Robot Controller) to make decisions based on the location data.
+\end{enumerate}
+
+\hypertarget{location-cv}{%
+\subsection{\texorpdfstring{\texttt{location-cv}}{location-cv}}\label{location-cv}}
+
+The \texttt{location-cv} channel is the channel that transfers the
+location data from the \texttt{CV} to the core. It is normally a
+3-element array, which contains the x, y coordinates and the angle of
+the robot (yaw).
+
+\hypertarget{location-rc}{%
+\subsection{\texorpdfstring{\texttt{location-rc}}{location-rc}}\label{location-rc}}
+
+The \texttt{location-rc} channel is the channel that transfers the
+location data from the core to the \texttt{RC} (Robot Controller). It is
+normally a 3-element array, which contains the x, y coordinates and the
+angle of the robot (yaw).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \texttt{block}: send colored block information. The \texttt{block}
+  channel is the channel transfers the block information from the
+  \texttt{CV} to the core. Then, the core will send the block
+  information to the \texttt{RC} (Robot Controller) to make decisions
+  based on the block information.
+\end{enumerate}
+
+\hypertarget{block-cv}{%
+\subsection{\texorpdfstring{\texttt{block-cv}}{block-cv}}\label{block-cv}}
+
+The \texttt{block-cv} channel is the channel that transfers the block
+information from the \texttt{CV} to the core. It is normally a 3-element
+array, which contains the x, y coordinates and the color of the block.
+
+\hypertarget{block-rc}{%
+\subsection{\texorpdfstring{\texttt{block-rc}}{block-rc}}\label{block-rc}}
+
+The \texttt{block-rc} channel is the channel that transfers the block
+information from the core to the \texttt{RC} (Robot Controller). It is
+normally a 3-element array, which contains the x, y coordinates and the
+color of the block.
+
+\end{document}
